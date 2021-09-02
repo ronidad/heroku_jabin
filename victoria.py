@@ -5,6 +5,7 @@ import plotly.express as px
 
 
 
+
 crops=pd.read_csv("df_crops.csv").set_index("Produce_Variety")
 
 regions = pd.read_csv("df_regions.csv").set_index("County")
@@ -43,10 +44,10 @@ if selected_status=="Crops per month":
 if selected_status=="Regions":
     st.title("number of crops sold per month")
     st.subheader("the one with highest is the best")
-    st.bar_chart(regions)
+    st.line_chart(regions)
 
 
 if selected_status=="Regions Table":
     st.title("Regions")
     st.subheader("Regions table")
-    st.bar_chart(regions)
+    st.table(regions)
